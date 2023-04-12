@@ -1,8 +1,8 @@
 # EasyPool
 
 * ObjectPool.csをコピーして使用してください。
+* ObjectPool.csの単一ファイルで使用できます。
 * Program.csにテスト用のコードと説明が入っています。
-
 
 ## 使い方
 
