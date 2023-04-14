@@ -74,7 +74,7 @@ namespace EasyObjectPool
         public int Count => PoolCollection == null ? 0 : PoolCollection.GetCount();
 
 
-        private readonly Func<T>? CreateInstance;
+        private readonly Func<T> CreateInstance;
         private readonly Action<T>? OnReturn;
         private readonly Action<T>? OnBorrow;
         private readonly Action? OnClear;
@@ -96,16 +96,14 @@ namespace EasyObjectPool
             {
                 throw new ArgumentOutOfRangeException(nameof(capacity));
             }
+
             this.PoolCollection = PoolCollection ?? new StackPool<T>();
             this.PoolCollection.SetCapacity(capacity);
             this.CreateInstance = CreateInstance ?? throw new Exception("Can't Create Instance.");
 
-            if (OnReturn != null)
-                this.OnReturn = OnReturn;
-            if (OnBorrow != null)
-                this.OnBorrow = OnBorrow;
-            if (OnClear != null)
-                this.OnClear = OnClear;
+            this.OnReturn = OnReturn;
+            this.OnBorrow = OnBorrow;
+            this.OnClear = OnClear;
 
             for (int i = 0; i < capacity; i++)
             {
