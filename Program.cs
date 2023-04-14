@@ -1,5 +1,6 @@
 ﻿using EasyObjectPool;
 using System;
+using System.Numerics;
 
 namespace Pool
 {
@@ -26,7 +27,7 @@ namespace Pool
 
         public static void Main()
         {
-            #region Not_Use_Using_Statement
+            #region Not_Use_UsingStatement
             Console.WriteLine("\n** Not Use Using Statement **");
             // usingステートメントを使わないプール
             // プールを作成する
@@ -51,7 +52,7 @@ namespace Pool
 
             #endregion
 
-            #region Use_Using_Statement
+            #region Use_UsingStatement
             Console.WriteLine("\n** Use Using Statement **");
             // usingステートメントを使うプール
             // プールを作成する
