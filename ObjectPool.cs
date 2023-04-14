@@ -112,7 +112,7 @@ namespace EasyObjectPool
         }
 
         /// <summary>
-        /// オブジェクトを返却します
+        /// オブジェクトの返却
         /// </summary>
         /// <param name="obj"></param>
         /// <exception cref="ArgumentException"></exception>
