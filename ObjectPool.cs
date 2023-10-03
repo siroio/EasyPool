@@ -69,16 +69,13 @@ namespace EasyObjectPool
         public IPoolCollection<T> PoolCollection { get; private set; }
         public bool IsDispose { get; private set; }
 
-
         public const int MaxPoolLimit = int.MaxValue;
         public int Count => PoolCollection == null ? 0 : PoolCollection.GetCount();
-
 
         private readonly Func<T> CreateInstance;
         private readonly Action<T>? OnReturn;
         private readonly Action<T>? OnBorrow;
         private readonly Action? OnClear;
-
 
         /// <summary>
         /// オブジェクトプールの作成
